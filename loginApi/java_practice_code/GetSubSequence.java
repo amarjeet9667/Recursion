@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class GetSubSequence {
     
-    public static void main(String[] arg){
+    public static void main(String[] arg)throws Exception{
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter your string:-");
         String str = sc.next();
