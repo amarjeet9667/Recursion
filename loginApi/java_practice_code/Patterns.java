@@ -63,21 +63,120 @@ public class Patterns {
     // }
 
     // Reverse pattern
+    // public static void main(String[] arg){
+        
+    //     Scanner sc = new Scanner(System.in);
+    //     System.out.print("Enter number of rows:- ");
+    //     int row = sc.nextInt();
+        
+
+    //     for(int i = row; i > 0; i --){
+
+    //         for(int j = 0; j < i; j++){
+                
+    //                 System.out.print("*");
+                
+
+    //         }
+    //         System.out.println();
+    //     }
+    // }
+
+    // mirror star stair
+    // public static void main(String[] arg){
+    //     Scanner sc = new Scanner(System.in);
+    //     System.out.print("Enter number of rows:- ");
+    //     int row = sc.nextInt();
+
+    //     for(int i = 0; i < row; i++){
+
+    //         for(int j = 0; j < ( (row - 1) - i ); j++){
+
+    //             System.out.print(" ");
+    //         }
+
+    //         for(int k = 0; k <= i ; k++){
+    //             System.out.print("*");
+
+    //         }
+
+    //         System.out.println();
+    //     }
+    // }
+
+
+    // Conting increase by 1;
+    // public static void main(String[] arg){
+    //     Scanner sc = new Scanner(System.in);
+    //     System.out.print("Enter Number of rows:- ");
+    //     int row = sc.nextInt();
+
+    //     for(int i = 0; i < row; i++){
+
+    //         for(int j = 0; j < (i + 1 ); j++){
+
+    //             System.out.print(j+1);
+    //         }
+
+    //         System.out.println();
+    //     }
+    // }
+
+    // Conting increase by 1 Reverse;
+    // public static void main(String[] arg){
+    //     Scanner sc = new Scanner(System.in);
+    //     System.out.print("Enter Number of rows:- ");
+    //     int row = sc.nextInt();
+
+    //     for(int i = row; i >= 0; i--){
+
+    //         for(int j = 0; j < i; j++){
+
+    //             System.out.print(j+1 + " ");
+    //         }
+
+    //         System.out.println();
+    //     }
+    // }
+
+    // print counting with row an coloumn;
+    // public static void main(String[] arg){
+    //     Scanner sc = new Scanner(System.in);
+    //     System.out.print("Enter Number of rows:- ");
+    //     int row = sc.nextInt();
+    //     int count = 1;
+
+    //     for(int i = 0; i < row; i++){
+
+    //         for(int j = 0; j < i + 1; j++){
+
+    //             System.out.print(count++ + " ");
+    //         }
+
+    //         System.out.println();
+    //     }
+    // }
+
+    // Print 1,0 bit;
     public static void main(String[] arg){
-        
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter number of rows:- ");
+        System.out.print("Enter Number of rows:- ");
         int row = sc.nextInt();
-        
 
-        for(int i = row; i > 0; i --){
+        for(int i = 0; i < row; i++){
 
-            for(int j = 0; j < i; j++){
+            for(int j = 0; j < i + 1; j++){
+                int sum = i+j;
+
+                if(sum % 2 == 0){
+                    System.out.print("1" + " ");
+                }else{
+                    System.out.print("0" + " ");
+                }
+
                 
-                    System.out.print("*");
-                
-
             }
+
             System.out.println();
         }
     }
