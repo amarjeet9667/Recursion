@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 class Sorting_Practice2{
-    //......Bubble sort............
+//1......Bubble sort............
     public static void BubbleSort(int[] arr){
 
         int n = arr.length;
@@ -19,7 +19,7 @@ class Sorting_Practice2{
     }
 
 
-    //................selection sort...........
+//2................selection sort...........
     public static void SelectionSort(int[] arr){
         int n = arr.length;
 
@@ -37,7 +37,7 @@ class Sorting_Practice2{
         }
     }
 
-    //.................Insersion soert.............
+//3.................Insersion soert.............
     public static void InsersionSort(int[] arr){
         int n = arr.length;
 
@@ -54,7 +54,7 @@ class Sorting_Practice2{
         }
     }
 
-    //...........Merge Sort.............
+//4...........Merge Sort.............
     public static void MergeSort(int[] arr, int st, int end){
         if(st < end){
             int mid = st + (end-st)/2;
@@ -100,7 +100,7 @@ class Sorting_Practice2{
         }
     }
 
-    //..................Quick Sort.............
+//5..................Quick Sort.............
     public static void QuickSort(int[] arr, int st, int end){
         if(st <= end){
             int pi = partition(arr,st,end);
