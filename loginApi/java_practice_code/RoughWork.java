@@ -66,15 +66,65 @@ public class RoughWork {
     // insertionSort(arr);
     // }
 
-    // Reverse string
-    public static void reverseString(String str) {
-        for(int i = str.length() - 1; i >= 0; i--){
-            System.out.print(str.charAt(i));
-        }
-    }
+    // -------------Merge Sort-------------
 
-    public static void main(String[] arg) {
-        String str = "Jeet";
-        reverseString(str);
-    }
+        public static void divide(int[] arr, int si, int ei) {
+            if (si >= ei) {
+                return;
+            }
+
+            int mid = si + (ei - si) / 2;
+            divide(arr, si, mid);
+            divide(arr, mid + 1, ei);
+            conquer(arr, si, mid, ei);
+        }
+
+        public static void conquer(int[] arr, int si, int mid, int ei) {
+            int[] merge = new int[ei - si + 1];
+
+            int idx1 = si;
+            int idx2 = mid + 1;
+            int idxM = 0;
+
+            while (idx1 <= mid && idx2 <= ei) {
+                if (arr[idx1] <= arr[idx2]) {
+                    merge[idxM++] = arr[idx1++];
+                } else {
+                    merge[idxM++] = arr[idx2++];
+                }
+            }
+
+            while (idx1 <= mid) {
+                merge[idxM++] = arr[idx1++];
+            }
+
+            while (idx2 <= ei) {
+                merge[idxM++] = arr[idx2++];
+            }
+
+            for (int i = 0, j = si; i < merge.length; i++, j++) {
+                arr[j] = merge[i];
+            }
+        }
+
+        public static void main(String[] args) {
+            int[] arr = { 3, 6, 9, 5, 2 };
+            divide(arr, 0, arr.length - 1);
+
+            for (int i = 0; i < arr.length; i++) {
+                System.out.println(arr[i]);
+            }
+        }
+
+    // Reverse string
+    // public static void reverseString(String str) {
+    // for (int i = str.length() - 1; i >= 0; i--) {
+    // System.out.print(str.charAt(i));
+    // }
+    // }
+
+    // public static void main(String[] arg) {
+    // String str = "Jeet";
+    // reverseString(str);
+    // }
 }

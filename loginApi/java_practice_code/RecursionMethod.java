@@ -367,28 +367,51 @@ class RecursionMethod {
     // }
 
 
-    //------------Keypad combination------------
-    public static String[] keypad = {".","abc","def","ghi","jkl","mno","pqrs","tu","vwx","yz"};
+//------------Keypad combination------------
+    // public static String[] keypad = {".","abc","def","ghi","jkl","mno","pqrs","tu","vwx","yz"};
 
-    public static void keypadCombination(String str, int idx, String newString){
-        if(idx == str.length()){
-            System.out.println(newString);
+    // public static void keypadCombination(String str, int idx, String newString){
+    //     if(idx == str.length()){
+    //         System.out.println(newString);
+    //         return;
+    //     }
+
+    //     char curChar = str.charAt(idx);
+    //     String mapping = keypad[curChar - '0'];
+    //     for(int i = 0; i < mapping.length(); i++ ){
+    //         keypadCombination(str, idx+1, newString+mapping.charAt(i));
+    //     }
+    // }
+
+    // public static void main(String[] arg){
+
+    //     Scanner sc = new Scanner(System.in);
+    //     System.out.println("Enter your string:- ");
+    //     String str = sc.next();
+    //     System.out.println("Here is your OutPut:-");
+    //     keypadCombination(str, 0, "");
+    // }
+
+    //-------------Permutation------------
+    public static void printPerm(String str, String permutaString){
+        if(str.length() == 0){
+            System.out.println(permutaString);
             return;
         }
 
-        char curChar = str.charAt(idx);
-        String mapping = keypad[curChar - '0'];
-        for(int i = 0; i < mapping.length(); i++ ){
-            keypadCombination(str, idx+1, newString+mapping.charAt(i));
+        for(int i = 0; i < str.length(); i++){
+            char curChar = str.charAt(i);
+
+            String newString = str.substring(0, i) + str.substring(i+1);
+            printPerm(newString, permutaString+curChar);
         }
     }
 
     public static void main(String[] arg){
-
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter your string:- ");
+        System.out.println("Enter Your string:-");
         String str = sc.next();
-        System.out.println("Here is your OutPut:-");
-        keypadCombination(str, 0, "");
+        printPerm(str, "");
     }
+
 }
