@@ -76,6 +76,19 @@ public class LLReverse {
         head = prevNode;
     }
 
+    public Node reverseListRecursive(Node head){
+
+        if(head == null || head.next == null){
+            return head;
+        }
+
+        Node newNode = reverseListRecursive(head.next);
+        head.next.next = head;
+        head.next = null;
+
+        return newNode;
+    }
+
     public static void main(String[] arg){
         LLReverse list = new LLReverse();
         list.addFirst(3);
@@ -88,6 +101,10 @@ public class LLReverse {
         list.printList();
 
         list.reverseList();
+        list.printList();
+
+        System.out.println("Recursion methode:- ");
+        list.head = list.reverseListRecursive(list.head);
         list.printList();
     }
 }
